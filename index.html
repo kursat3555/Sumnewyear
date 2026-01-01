@@ -16,7 +16,7 @@
 
     .container {
       display: flex;
-      align-items: center;
+      align-items: flex-start; /* GIFlerin altındaki yeni GIFler için */
       justify-content: center;
       min-height: 100vh;
       gap: 40px;
@@ -24,6 +24,13 @@
       flex-wrap: wrap;
       position: relative;
       z-index: 1;
+    }
+
+    .side-gif {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; /* GIFler arasındaki boşluk */
     }
 
     .side-gif img {
@@ -70,6 +77,7 @@
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
+        align-items: center;
       }
       .side-gif img {
         width: 220px;
@@ -123,9 +131,10 @@
 
   <div class="container">
 
-    <!-- 🖼️ SOL GIF -->
+    <!-- 🖼️ SOL GIF ve alt GIF -->
     <div class="side-gif">
       <img src="https://media.tenor.com/d2nnuVMvPbcAAAAi/milk-and-mocha-milk-and-mocha-bear.gif" alt="sol gif">
+      <img src="https://media.tenor.com/view/milk-mocha-milk-mocha-bear-milk-and-mocha-milk-and-mocha-bear-bear-couple-gif-12691347365471292050.gif" alt="sol alt gif">
     </div>
 
     <!-- 💌 MESAJ -->
@@ -156,9 +165,10 @@ nice mutlu senelere 🦋
       </div>
     </div>
 
-    <!-- 🖼️ SAĞ GIF -->
+    <!-- 🖼️ SAĞ GIF ve alt GIF -->
     <div class="side-gif">
       <img src="https://media1.tenor.com/m/zsxosPk8AdsAAAAC/mocha-and-milk-mocha-bear.gif" alt="sağ gif">
+      <img src="https://media.tenor.com/view/i-love-you-so-much-gif-16535700227512345535.gif" alt="sağ alt gif">
     </div>
 
   </div>
@@ -177,11 +187,6 @@ nice mutlu senelere 🦋
       musicPlaying = false;
     }
   }
-</script>
-
-</body>
-</html>
-
 </script>
 
 </body>
