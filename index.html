@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Sana Bir Mesajım Var 💖</title>
-
   <style>
     body {
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
@@ -12,7 +11,6 @@
       margin: 0;
       padding: 0;
     }
-
     .container {
       display: flex;
       align-items: center;
@@ -22,13 +20,11 @@
       padding: 40px;
       flex-wrap: wrap;
     }
-
     .side-gif img {
       width: 260px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
-
     .card {
       background: rgba(0,0,0,0.25);
       padding: 40px;
@@ -36,27 +32,29 @@
       max-width: 650px;
       text-align: center;
     }
-
     h1 {
       font-size: 34px;
       margin-bottom: 20px;
     }
-
     p {
       font-size: 20px;
       line-height: 1.6;
       white-space: pre-line;
     }
-
     .emojis {
       font-size: 34px;
       margin-top: 25px;
     }
-
-    iframe {
-      display: none;
+    .music-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background-color: #ff6b81;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
     }
-
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
@@ -69,24 +67,17 @@
 </head>
 <body>
 
-  <!-- 🎵 Arka Plan Müzik -->
-  <iframe 
-    src="https://www.youtube.com/embed/Dcb4CfiSlKU&list=RDEMzy1-7ovfWCSsB2ls3e9JKw&index=10?autoplay=1&loop=1&playlist=Dcb4CfiSlKU&list=RDEMzy1-7ovfWCSsB2ls3e9JKw&index=10"
-    allow="autoplay=1">
-  </iframe>
-
   <div class="container">
 
     <!-- 🖼️ SOL GIF -->
     <div class="side-gif">
-      <img src="data:image/gif;https://i.pinimg.com/736x/65/65/42/656542d1f13a3907e993bc47958ee85a.jpg" alt="sol gif">
+      <img src="https://media.tenor.com/d2nnuVMvPbcAAAAi/milk-and-mocha-milk-and-mocha-bear.gif" alt="sol gif">
     </div>
 
     <!-- 💌 MESAJ -->
     <div class="card">
       <h1>
-        SERENDIPCEM;
-        Sağlık, huzur ve neşeyle dolu bir yıl dilerim 🌸
+        SERENDIPCEM; Sağlık, huzur ve neşeyle dolu bir yıl dilerim   ✨
       </h1>
 
       <p>
@@ -101,16 +92,38 @@ nice mutlu senelere 🦋
       </p>
 
       <div class="emojis">
-        🦊🫶🐰
+       🦊🫶🐰
+      </div>
+
+      <!-- 🎵 Müzik iframe -->
+      <div style="margin-top:20px;">
+        <iframe id="music-iframe" width="0" height="0" src="https://www.youtube.com/embed/Dcb4CfiSlKU?enablejsapi=1" frameborder="0" allow="autoplay"></iframe>
+        <button class="music-button" onclick="toggleMusic()">🎵 Müziği Çal / Durdur</button>
       </div>
     </div>
 
     <!-- 🖼️ SAĞ GIF -->
     <div class="side-gif">
-      <img src="data:image/gif;base64,pcVw6e8loVIMCTljBgGl+I4nzD8+pniZe/dEiLN+M3/y/1i7DcQIzjBU/uUVDd8U..." alt="sağ gif">
+      <img src="https://media1.tenor.com/m/zsxosPk8AdsAAAAC/mocha-and-milk-mocha-bear.gif" alt="sağ gif">
     </div>
 
   </div>
+
+<script>
+  let musicPlaying = false;
+  const iframe = document.getElementById('music-iframe');
+
+  // YouTube Player API için
+  function toggleMusic() {
+    if (!musicPlaying) {
+      iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      musicPlaying = true;
+    } else {
+      iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      musicPlaying = false;
+    }
+  }
+</script>
 
 </body>
 </html>
