@@ -10,7 +10,10 @@
       color: #fff;
       margin: 0;
       padding: 0;
+      position: relative;
+      overflow-x: hidden;
     }
+
     .container {
       display: flex;
       align-items: center;
@@ -19,12 +22,16 @@
       gap: 40px;
       padding: 40px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
     }
+
     .side-gif img {
       width: 260px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
+
     .card {
       background: rgba(0,0,0,0.25);
       padding: 40px;
@@ -32,19 +39,23 @@
       max-width: 650px;
       text-align: center;
     }
+
     h1 {
       font-size: 34px;
       margin-bottom: 20px;
     }
+
     p {
       font-size: 20px;
       line-height: 1.6;
       white-space: pre-line;
     }
+
     .emojis {
       font-size: 34px;
       margin-top: 25px;
     }
+
     .music-button {
       padding: 10px 20px;
       font-size: 16px;
@@ -55,6 +66,7 @@
       cursor: pointer;
       margin-top: 20px;
     }
+
     @media (max-width: 900px) {
       .container {
         flex-direction: column;
