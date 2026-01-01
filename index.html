@@ -75,9 +75,51 @@
         width: 220px;
       }
     }
+
+    /* 🪄 Animasyonlu süslemeler */
+    .floating {
+      position: absolute;
+      pointer-events: none;
+      font-size: 24px;
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      50% { transform: translateY(600px) rotate(180deg); }
+      100% { opacity: 0; }
+    }
+
+    .floating-up {
+      animation: float-up 6s linear infinite;
+    }
+
+    @keyframes float-up {
+      0% { transform: translateY(600px) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      50% { transform: translateY(-50px) rotate(180deg); }
+      100% { opacity: 0; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- 🎇 Üstten düşen kalpler ve yıldızlar -->
+  <div class="floating" style="left:10%; font-size:30px;">❤️</div>
+  <div class="floating" style="left:25%; font-size:24px;">💖</div>
+  <div class="floating" style="left:40%; font-size:28px;">💘</div>
+  <div class="floating" style="left:60%; font-size:26px;">✨</div>
+  <div class="floating" style="left:75%; font-size:32px;">🌟</div>
+
+  <!-- 👇 Alttan yukarı çıkan konfeti ve yıldızlar -->
+  <div class="floating floating-up" style="left:15%; font-size:24px;">🎉</div>
+  <div class="floating floating-up" style="left:35%; font-size:26px;">✨</div>
+  <div class="floating floating-up" style="left:50%; font-size:28px;">💌</div>
+  <div class="floating floating-up" style="left:70%; font-size:24px;">🌟</div>
+  <div class="floating floating-up" style="left:85%; font-size:30px;">🎊</div>
 
   <div class="container">
 
@@ -135,6 +177,11 @@ nice mutlu senelere 🦋
       musicPlaying = false;
     }
   }
+</script>
+
+</body>
+</html>
+
 </script>
 
 </body>
