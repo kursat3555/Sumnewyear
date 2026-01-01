@@ -16,7 +16,7 @@
 
     .container {
       display: flex;
-      align-items: flex-start; /* GIFlerin altındaki yeni GIFler için */
+      align-items: flex-start;
       justify-content: center;
       min-height: 100vh;
       gap: 40px;
@@ -30,7 +30,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px; /* GIFler arasındaki boşluk */
+      gap: 20px;
     }
 
     .side-gif img {
@@ -84,7 +84,7 @@
       }
     }
 
-    /* 🪄 Animasyonlu süslemeler */
+    /* Animasyonlu süslemeler */
     .floating {
       position: absolute;
       pointer-events: none;
@@ -115,14 +115,14 @@
 </head>
 <body>
 
-  <!-- 🎇 Üstten düşen kalpler ve yıldızlar -->
+  <!-- Üstten düşen kalpler ve yıldızlar -->
   <div class="floating" style="left:10%; font-size:30px;">❤️</div>
   <div class="floating" style="left:25%; font-size:24px;">💖</div>
   <div class="floating" style="left:40%; font-size:28px;">💘</div>
   <div class="floating" style="left:60%; font-size:26px;">✨</div>
   <div class="floating" style="left:75%; font-size:32px;">🌟</div>
 
-  <!-- 👇 Alttan yukarı çıkan konfeti ve yıldızlar -->
+  <!-- Alttan yukarı çıkan konfeti ve yıldızlar -->
   <div class="floating floating-up" style="left:15%; font-size:24px;">🎉</div>
   <div class="floating floating-up" style="left:35%; font-size:26px;">✨</div>
   <div class="floating floating-up" style="left:50%; font-size:28px;">💌</div>
@@ -131,13 +131,13 @@
 
   <div class="container">
 
-    <!-- 🖼️ SOL GIF ve alt GIF -->
+    <!-- SOL GIF ve alt GIF -->
     <div class="side-gif">
       <img src="https://media.tenor.com/d2nnuVMvPbcAAAAi/milk-and-mocha-milk-and-mocha-bear.gif" alt="sol gif">
-      <img src="https://media.tenor.com/view/milk-mocha-milk-mocha-bear-milk-and-mocha-milk-and-mocha-bear-bear-couple-gif-12691347365471292050.gif" alt="sol alt gif">
+      <img src="https://media.tenor.com/5H0bDx0KvqAAAAAd/milk-mocha-milk-mocha.gif" alt="sol alt gif">
     </div>
 
-    <!-- 💌 MESAJ -->
+    <!-- MESAJ -->
     <div class="card">
       <h1>
         SERENDIPCEM; Sağlık, huzur ve neşeyle dolu bir yıl dilerim   ✨
@@ -158,17 +158,17 @@ nice mutlu senelere 🦋
        🦊🫶🐰
       </div>
 
-      <!-- 🎵 Müzik iframe -->
+      <!-- Müzik -->
       <div style="margin-top:20px;">
         <iframe id="music-iframe" width="0" height="0" src="https://www.youtube.com/embed/Dcb4CfiSlKU?enablejsapi=1" frameborder="0" allow="autoplay"></iframe>
         <button class="music-button" onclick="toggleMusic()">🎵 Müziği Çal / Durdur</button>
       </div>
     </div>
 
-    <!-- 🖼️ SAĞ GIF ve alt GIF -->
+    <!-- SAĞ GIF ve alt GIF -->
     <div class="side-gif">
       <img src="https://media1.tenor.com/m/zsxosPk8AdsAAAAC/mocha-and-milk-mocha-bear.gif" alt="sağ gif">
-      <img src="https://media.tenor.com/view/i-love-you-so-much-gif-16535700227512345535.gif" alt="sağ alt gif">
+      <img src="https://media.tenor.com/1w1zzF7ZMz8AAAAC/i-love-you-so-much.gif" alt="sağ alt gif">
     </div>
 
   </div>
@@ -177,7 +177,6 @@ nice mutlu senelere 🦋
   let musicPlaying = false;
   const iframe = document.getElementById('music-iframe');
 
-  // YouTube Player API için
   function toggleMusic() {
     if (!musicPlaying) {
       iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
