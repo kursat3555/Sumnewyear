@@ -8,57 +8,88 @@
     body {
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       font-family: 'Arial', sans-serif;
-      text-align: center;
-      padding: 50px;
       color: #fff;
+      margin: 0;
+      padding: 0;
     }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 40px;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .side-gif img {
+      width: 260px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
     .card {
       background: rgba(0,0,0,0.25);
       padding: 40px;
       border-radius: 20px;
-      max-width: 700px;
-      margin: auto;
+      max-width: 650px;
+      text-align: center;
     }
+
     h1 {
-      font-size: 36px;
+      font-size: 34px;
       margin-bottom: 20px;
     }
+
     p {
       font-size: 20px;
       line-height: 1.6;
       white-space: pre-line;
     }
+
     .emojis {
-      font-size: 36px;
+      font-size: 34px;
       margin-top: 25px;
     }
-    img {
-      width: 260px;
-      border-radius: 15px;
-      margin-top: 25px;
-    }
+
     iframe {
       display: none;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .side-gif img {
+        width: 220px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 🎵 Arka Plan Müzik (Ahu) -->
-  <!-- Not: YouTube otomatik ses açılmasına izin vermeyebilir.
-       Açılmazsa ekrana küçük bir "Müziği Aç" butonu ekleriz -->
+  <!-- 🎵 Arka Plan Müzik -->
   <iframe 
     src="https://www.youtube.com/embed/Dcb4CfiSlKU&list=RDEMzy1-7ovfWCSsB2ls3e9JKw&index=10?autoplay=1&loop=1&playlist=Dcb4CfiSlKU&list=RDEMzy1-7ovfWCSsB2ls3e9JKw&index=10"
     allow="autoplay">
   </iframe>
 
-  <div class="card">
-    <h1>
-      SERENDIPCEM; 
-      Sağlık, huzur ve neşeyle dolu bir yıl dilerim 
-    </h1>
+  <div class="container">
 
-    <p>
+    <!-- 🖼️ SOL GIF -->
+    <div class="side-gif">
+      <img src="1536216f-d695-4d19-a211-ee01bbcbd3c7.59" alt="sol gif">
+    </div>
+
+    <!-- 💌 MESAJ -->
+    <div class="card">
+      <h1>
+        SERENDIPCEM; Sağlık, huzur ve neşeyle dolu bir yıl dilerim 🦊🐰
+      </h1>
+
+      <p>
 Ailenle beraber sağlıklı, sıhhatli, huzurlu bir yıl geçirirsin inşallah.  
 İşine kolaylık, sınavında başarılar 🤲🏻  
 
@@ -67,13 +98,18 @@ Son zamanlarda seni görebilmek, gülüşünü izlemek bana ayrı bir mutluluk v
 
 İyi ki varsın 🌸  
 nice mutlu senelere 🦋
-    </p>
+      </p>
 
-    <div class="emojis">
-      🦊🫶🐰
+      <div class="emojis">
+        💖 💘 🥰 🌹 ✨
+      </div>
     </div>
 
-    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="love gif">
+    <!-- 🖼️ SAĞ GIF -->
+    <div class="side-gif">
+      <img src="ccfbf48d-8791-4c03-8105-1d4b4f410c32.05" alt="sağ gif">
+    </div>
+
   </div>
 
 </body>
